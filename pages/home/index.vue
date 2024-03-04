@@ -2,20 +2,16 @@
 definePageMeta({
     path: "/"
 })
-
 const query = useQuery();
 const route = useRoute();
 </script>
 
 <template>
   <div>
-    <h1>HOME</h1>
+    <h1 class="text-3xl">HOME</h1>
     {{ route.hash }}
   </div>
 </template>
 
-
-
 <style>
-
 </style>
