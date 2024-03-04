@@ -41,9 +41,9 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      lexend: true,
-      "russo-one": true,
-      inter: true
+      Lexend: [200,300,400,500,600,700,800,900],
+      "Russo One": true,
+      "Kaushan Script": 400
     }
   },
   router: {
