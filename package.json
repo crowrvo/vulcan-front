@@ -24,6 +24,7 @@
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@unocss/nuxt": "^0.58.5",
     "@unocss/preset-icons": "^0.58.5",
+    "typescript": "^5.3.3",
     "unocss": "^0.58.5"
   }
 }
