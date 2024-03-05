@@ -34,12 +34,12 @@ const redirectTo = query.redirects ?? "home";
           </div>
         </fieldset>
       </div>
-      <NuxtLink tabindex="0"
+      <button type="button" @click.prevent="SignIn()" tabindex="0"
         class="text-base lg:text-md dark:bg-neutral-g800 flex gap-2 px-3 py-3 lg:py-4 rounded-sd items-center shadow-[0px_0px_4px_rgba(0,0,0,0.1)] transition-colors hover:active:text-white hover:active:bg-primary-400 focus:outline-primary-200 ease-in"
         to="">
-        <g-icon class="text-sm lg:text-md" @click="SignIn()" icon="uil:google" />
+        <g-icon class="text-sm lg:text-md" icon="uil:google" />
         Continuar com o Google
-      </NuxtLink>
+      </button>
     </form>
   </div>
 </template>
