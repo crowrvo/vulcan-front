@@ -112,9 +112,14 @@ export default {
       borderRadius: {
         sd: "8px",
         md: "12px",
+      },
+      size: {
+        "logo": "60px",
+
+        "profile-image": "60px",
+        "profile-image-sm": "48px",
       }
     },
   },
   plugins: [],
 } satisfies Config
-

@@ -1,6 +1,3 @@
-import { resolveConfig } from "unocss";
-import tailwindConfig from "./tailwind.config";
-
 export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
@@ -48,7 +45,7 @@ export default defineNuxtConfig({
   },
   router: {
     options: {
-      scrollBehaviorType: "smooth"
+      scrollBehaviorType: "smooth",
     }
   }
 });
