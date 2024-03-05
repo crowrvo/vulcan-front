@@ -20,5 +20,10 @@ export default defineConfig({
     "i-uil:eye",
     "i-uil:eye-slash",
     "i-mdi:home",
+    "i-material-symbols:dashboard",
+    "i-mdi:weather-night",
+    "i-mdi:weather-sunny",
+    "i-uil:angle-down",
+    "i-mdi:close"
   ]
 })
