@@ -38,7 +38,7 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
                     class="text-neutral-g0 secundary-gradient px-6 py-2 basis-1/2 flex bg-gradient-to-r from-secundary-500 to-secundary-700 text-base lg:text-md items-center justify-center gap-2 text-center rounded-md"
                     :to="novelUrl">Mostrar mais</NuxtLink>
                 <button tabindex="0" type="button" @click=""
-                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center justify-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800">
+                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center justify-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800 dark:hover:active:!bg-neutral-g500">
                     <g-icon class="text-sm lg:text-md !text-neutral-g0" icon="uil:books" />
                     Leitura
                 </button>
@@ -76,7 +76,7 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
                     class="text-neutral-g0 secundary-gradient px-6 py-2 basis-1/2 inline-flex bg-gradient-to-r from-secundary-500 to-secundary-700 text-base lg:text-md items-center gap-2 text-center rounded-md"
                     :to="novelUrl">Mostrar mais</NuxtLink>
                 <button tabindex="0" type="button" @click=""
-                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800">
+                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800 dark:hover:active:!bg-neutral-g500">
                     <g-icon class="text-sm !text-neutral-g0" icon="uil:books" />
                     Leitura
                 </button>
