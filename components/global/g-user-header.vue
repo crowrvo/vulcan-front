@@ -25,10 +25,10 @@ const user: UserBasicInfo = {
 </script>
 <template>
     <header
-        class="flex items-center justify-between gap-4 fixed top-0 w-full overflow-x-hidden px-6 py-2 lg:px-16 lg:py-4 bg-neutral-g0 dark:bg-neutral-g900 shadow-md dark:shadow-neutral-g0/10">
+        class="flex items-center justify-between gap-4 fixed top-0 w-full overflow-x-hidden px-6 py-2 lg:px-16 lg:py-4 bg-neutral-g0 dark:bg-neutral-g900 shadow-md dark:shadow-neutral-g0/10 z-[900]">
         <div class="flex items-center gap-3 overflow-hidden">
             <button type="button" class="ml-1 p-2 focus:outline focus:outline-secundary-400 rounded-sd">
-                <g-icon class="!text-primary-600 dark:text-primary-400 text-sm lg:text-lg" icon="material-symbols:dashboard" />
+                <g-icon class="!text-primary-600 dark:!text-primary-400 text-sm lg:text-lg" icon="material-symbols:dashboard" />
             </button>
             <NuxtLink class="block" tabindex="0" to="/">
                 <NuxtImg src="/assets/logo.png" alt="Logo da Vulcan"
