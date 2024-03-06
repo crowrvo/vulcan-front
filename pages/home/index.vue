@@ -1,17 +1,16 @@
 <script lang="ts" setup>
 definePageMeta({
-    path: "/"
+  path: "/"
 })
 const query = useQuery();
 const route = useRoute();
 </script>
 
 <template>
-  <div>
-    <h1 class="text-3xl">HOME</h1>
-    {{ route.hash }}
+  <div class="mt-20 flex flex-col gap-11">
+    <Carousel class="w-screen" />
+    <div class="grid grid-cols-2 gap-x-6 gap-y-28 mx-6 lg:mx-16">
+      <TopNovels class="col-span-2" />
+    </div>
   </div>
 </template>
-
-<style>
-</style>

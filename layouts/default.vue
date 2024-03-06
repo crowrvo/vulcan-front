@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="w-full">
+    <g-user-header />
     <slot />
   </div>
 </template>
