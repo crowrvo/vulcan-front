@@ -24,6 +24,9 @@ export default defineConfig({
     "i-mdi:weather-night",
     "i-mdi:weather-sunny",
     "i-uil:angle-down",
-    "i-mdi:close"
+    "i-mdi:close",
+    "i-uil:clock",
+    "i-uil:books",
+    "i-uil:fire",
   ]
 })
