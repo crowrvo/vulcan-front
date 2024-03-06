@@ -89,17 +89,39 @@ export default {
       "neutral-g900": "#00081e",
     },
     fontSize: {
-      "xsm": "10px",
-      "sm": "13px",
-      "base": "16px",
-      "md": "20px",
-      "lg": "25px",
-      "2xl": "31px",
-      "3xl": "39px",
-      "4xl": "49px",
-      "5xl": "61px",
-      "6xl": "76px",
-      "7xl": "77px"
+      "xsm": ["10px", {
+        lineHeight: "125%"
+      }],
+      "sm": ["13px", {
+        lineHeight: "125%"
+      }],
+      "base": ["16px", {
+        lineHeight: "125%"
+      }],
+      "md": ["20px", {
+        lineHeight: "125%",
+      }],
+      "lg": ["25px", {
+        lineHeight: "125%"
+      }],
+      "2xl": ["31px", {
+        lineHeight: "125%"
+      }],
+      "3xl": ["39px", {
+        lineHeight: "125%"
+      }],
+      "4xl": ["49px", {
+        lineHeight: "125%"
+      }],
+      "5xl": ["61px", {
+        lineHeight: "125%"
+      }],
+      "6xl": ["76px", {
+        lineHeight: "125%"
+      }],
+      "7xl": ["77px", {
+        lineHeight: "125%"
+      }]
     },
     extend: {
       boxShadow: {
@@ -112,14 +134,18 @@ export default {
       borderRadius: {
         sd: "8px",
         md: "12px",
+        base: "16px"
       },
       size: {
         "logo": "60px",
 
         "profile-image": "60px",
         "profile-image-sm": "48px",
-      }
+      },
+      aspectRatio: {
+        "portrait": "9/16"
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 } satisfies Config
