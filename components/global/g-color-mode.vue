@@ -3,6 +3,7 @@ const colorMode = useDark({
     attribute: "theme",
 })
 const toggleColorMode = useToggle(colorMode)
+defineEmits(['show-menu'])
 </script>
 <template>
     <div
