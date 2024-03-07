@@ -4,7 +4,8 @@ import { carousel } from '~/test/mock/carousel';
 <template>
     <div class="relative grid grid-cols-1 w-full min-h-[320px] max-h-[80svh] overflow-hidden">
         <!-- container swap -->
-        <div class="flex w-max max-w-screen h-full snap-x snap-mandatory overflow-x-scroll before:bg-neutral-dark/30 before:absolute before:inset-0">
+        <div
+            class="flex w-max max-w-screen h-full snap-x snap-mandatory overflow-x-scroll before:bg-neutral-dark/30 before:absolute before:inset-0">
             <!-- slide -->
             <div role="region" v-for="slide in carousel"
                 class="flex flex-col justify-center w-screen h-full snap-center snap-always px-6 md:landscape:px-16"
@@ -22,7 +23,7 @@ import { carousel } from '~/test/mock/carousel';
                             </span>
                         </li>
                     </ul>
-                    <h3 class="text-2xl lg:text-4xl line-clamp-3 font-secundary font-bold text-neutral-g0 uppercase">
+                    <h3 class="text-2xl lg:text-4xl line-clamp-3 font-secundary text-neutral-g0 uppercase">
                         {{ slide.title }}
                     </h3>
                     <NuxtLink tabindex="0" :to="slide.url"
@@ -36,5 +37,6 @@ import { carousel } from '~/test/mock/carousel';
             class="absolute bottom-0 right-0 flex gap-3 bg-neutral-g10 dark:bg-neutral-g900 p-3 rounded-tl-sd min-w-[30%] overflow-visible">
             <span tabindex="0" v-for="slide in carousel"
                 class="size-6 rounded-full bg-secundary-600 dark:bg-secundary-200 border-none focus:outline-secundary-800 shadow-current-filter shadow-secundary-800 dark:shadow-secundary-400"></span>
+        </div>
     </div>
-</div></template>
+</template>
