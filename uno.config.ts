@@ -28,5 +28,7 @@ export default defineConfig({
     "i-uil:clock",
     "i-uil:books",
     "i-uil:fire",
+    "i-mdi:logout",
+    "i-uil:bell"
   ]
 })

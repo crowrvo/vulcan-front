@@ -6,7 +6,7 @@ export default {
   theme: {
     fontFamily: {
       primary: ["lexend", "system-ui", "Inter", "sans-serif"],
-      secondary: ["Russo One", "sans-serif"],
+      secundary: ["Russo One", "sans-serif"],
       ternary: ["Kaushan Script", "script"]
     },
     colors: {
