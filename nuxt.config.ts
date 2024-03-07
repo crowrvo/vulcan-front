@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/tailwind.css"],
-  modules: ["@unocss/nuxt", "@vueuse/nuxt", "@nuxtjs/google-fonts", "@nuxtjs/tailwindcss", "@nuxt/image"],
+  modules: ["@unocss/nuxt", "@vueuse/nuxt", "@nuxtjs/google-fonts", "@nuxtjs/tailwindcss", "@nuxt/image", "nuxt-headlessui"],
 
   image: {
     format: ["avif", "webp", "png", "jpg"],
@@ -47,5 +47,8 @@ export default defineNuxtConfig({
     options: {
       scrollBehaviorType: "smooth",
     }
+  },
+  headlessui: {
+    prefix: "Hl"
   }
 });
