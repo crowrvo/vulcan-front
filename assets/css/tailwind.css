@@ -2,9 +2,12 @@
 @tailwind utilities;
 @tailwind base;
 
-@layer utilities {
+@layer components {
+    .primary-gradient-x {
+        @apply bg-gradient-to-r from-primary-400 via-primary-500 via-50% to-primary-600 hover:active:from-primary-500 hover:active:to-primary-600 dark:from-primary-400 dark:to-primary-500 dark:hover:active:from-primary-500 dark:hover:active:to-primary-600;
+    }
     .secundary-gradient {
-        @apply hover:active:from-secundary-500 hover:active:to-secundary-900 dark:hover:active:from-secundary-500 dark:hover:active:to-secundary-600
+        @apply bg-gradient-to-r from-secundary-500 via-secundary-600 via-50% to-secundary-700 hover:active:from-secundary-500 hover:active:to-secundary-900 dark:hover:active:from-secundary-500 dark:hover:active:to-secundary-600
     }
 }
 
