@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import type { novelDetails } from '~/test/mock/novels';
 
 type props = novelDetails & {
@@ -15,8 +14,10 @@ const addToLibrary = () => { };
         <div class="flex flex-col justify-between gap-3 w-full p-3">
             <div class="flex self-stretch flex-col gap-3 w-full">
                 <hgroup class="self-stretch">
-                    <h4 @click="navigateTo(novelUrl)" class="line-clamp-2 text-md lg:text-lg font-bold capitalize">
-                        {{ title }}
+                    <h4 class="line-clamp-2 text-md lg:text-lg font-bold capitalize">
+                        <NuxtLink class="focus:outline-0 focus:underline focus:underline-offset-4" :to="novelUrl">
+                            {{ title }}
+                        </NuxtLink>
                     </h4>
                     <p
                         class="line-clamp-3 mt-1 w-full max-w-prose text-sm lg:text-md text-neutral-g100 dark:text-neutral-g50 leading-relaxed">
@@ -39,10 +40,10 @@ const addToLibrary = () => { };
             </div>
             <div class="flex flex-col self-stretch gap-2">
                 <NuxtLink
-                    class="text-neutral-g0 secundary-gradient px-6 py-3 basis-1/2 flex bg-gradient-to-r from-secundary-500 to-secundary-700 text-base lg:text-md items-center justify-center gap-2 text-center rounded-md"
+                    class="text-neutral-g0 secundary-gradient px-6 py-3 basis-1/2 flex bg-gradient-to-r from-secundary-500 to-secundary-700 text-base lg:text-md items-center justify-center gap-2 text-center rounded-md focus:outline focus:outline-secundary-700 dark:outline-secundary-400"
                     :to="novelUrl">Mostrar mais</NuxtLink>
                 <button tabindex="0" type="button" @click=""
-                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center justify-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800 dark:hover:active:!bg-neutral-g500">
+                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center justify-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800 dark:hover:active:!bg-neutral-g500 focus:outline focus:outline-neutral-g700 focus:outline-offset-1 dark:outline-neutral-g200">
                     <g-icon class="text-sm lg:text-md !text-neutral-g0" icon="uil:books" />
                     Leitura
                 </button>
@@ -54,13 +55,15 @@ const addToLibrary = () => { };
         class="inline-flex snap-always snap-center w-max min-w-[50%] flex-auto gap-3 max-w-[900px] justify-between rounded-xl border bg-secundary-50 border-secundary-300 dark:bg-neutral-g800 dark:border-neutral-g500 overflow-hidden hover:active:border-secundary-400 dark:hover:active:border-neutral-g200 transition-colors duration-200 ease-in">
         <NuxtImg
             class="aspect-portrait size-full basis-1/2 object-cover max-h-[200px] lg:max-h-[250px] max-w-1/2 rounded-br-sd"
-            :src="image" placeholder format="avif" />
+            :src="image" placeholder />
         <div class="flex flex-col justify-between gap-3 w-full p-3 h-max">
             <div class="flex self-stretch flex-col gap-3">
                 <hgroup class="self-stretch">
-                    <h4 @click="navigateTo(novelUrl)"
-                        class="line-clamp-2 text-md lg:text-lg font-bold capitalize select-all">
-                        {{ title }}</h4>
+                    <h4 class="line-clamp-2 text-md lg:text-lg font-bold capitalize">
+                        <NuxtLink class="focus:outline-0 focus:underline focus:underline-offset-4" :to="novelUrl">
+                            {{ title }}
+                        </NuxtLink>
+                    </h4>
                     <p
                         class="line-clamp-3 mt-1 w-full max-w-prose text-sm lg:text-md text-neutral-g100 dark:text-neutral-g50 leading-relaxed">
                         {{ description }}</p>
@@ -79,10 +82,10 @@ const addToLibrary = () => { };
             </div>
             <div class="flex flex-wrap md:landscape:flex-nowrap w-full gap-2">
                 <NuxtLink
-                    class="text-neutral-g0 px-6 py-2 basis-1/2 flex-auto inline-flex justify-center text-base lg:text-md items-center gap-2 text-center rounded-md secundary-gradient"
+                    class="text-neutral-g0 px-6 py-2 basis-1/2 flex-auto inline-flex justify-center text-base lg:text-md items-center gap-2 text-center rounded-md secundary-gradient focus:outline focus:outline-secundary-700 dark:outline-secundary-400"
                     :to="novelUrl">Mostrar mais</NuxtLink>
                 <button tabindex="0" type="button" @click=""
-                    class="px-6 py-2 basis-1/2 flex-auto inline-flex items-center justify-center text-base lg:text-md gap-2 text-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800 dark:hover:active:!bg-neutral-g500">
+                    class="px-6 py-2 basis-1/2 flex-auto inline-flex items-center justify-center text-base lg:text-md gap-2 text-center text-neutral-g0 rounded-md !bg-neutral-g600 hover:active:!bg-neutral-g800 dark:hover:active:!bg-neutral-g500 focus:outline focus:outline-neutral-g700 focus:outline-offset-1 dark:outline-neutral-g200">
                     <g-icon class="text-sm !text-neutral-g0" icon="uil:books" />
                     Leitura
                 </button>
