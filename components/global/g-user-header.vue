@@ -37,7 +37,7 @@ const showMenu = ref(false);
 
         <div class="flex items-center gap-6" @focusout="showMenu = false" @pointerout="showMenu = false">
             <g-color-mode class="!bg-transparent dark:!bg-transparent max-md:hidden" />
-            <div v-if="user" class="flex h-full items-center gap-1 self-stretch">
+            <div v-if="!user" class="flex h-full items-center gap-1 self-stretch">
                 <NuxtLink tabindex="0" class="inline-flex px-4 py-2 rounded-sd bg-transparent text-neutral-g900 dark:text-neutral-g0 focus:outline focus:outline-primary-700 dark:focus:outline-primary-400" to="/login">
                     Fazer Login
                 </NuxtLink>
@@ -51,7 +51,7 @@ const showMenu = ref(false);
     </header>
 </template>
 <style lang="scss" scoped>
-.router-linnk-exact-active.active div {
+.router-link-exact-active.active div {
     transform: translateY(0%);
 }
 </style>
