@@ -34,7 +34,7 @@ import { carousel } from '~/test/mock/carousel';
             </div>
         </div>
         <div
-            class="absolute bottom-0 right-0 flex gap-3 bg-neutral-g10 dark:bg-neutral-g900 p-3 rounded-tl-sd min-w-[30%] overflow-visible">
+            class="absolute bottom-0 right-0 flex gap-3 bg-neutral-g10 dark:bg-neutral-g900 p-3 rounded-tl-sd min-w-[30%]">
             <span tabindex="0" v-for="slide in carousel"
                 class="size-6 rounded-full bg-secundary-600 dark:bg-secundary-200 border-none focus:outline-secundary-800 shadow-current-filter shadow-secundary-800 dark:shadow-secundary-400"></span>
         </div>

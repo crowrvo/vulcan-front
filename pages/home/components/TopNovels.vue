@@ -8,7 +8,7 @@ import { topNovels } from '~/test/mock/novels';
                 <g-icon class="text-2xl md:landscape:text-lg lg:text-5xl !text-alert-600" icon="uil:fire" />
             </div>
             <div class="flex flex-col gap-1">
-                <h2 class="text-2xl lg:text-3xl font-secundary capitalize">Novels em <span
+                <h2 class="text-2xl lg:text-3xl font-secundary uppercase">Novels em <span
                         class="text-secundary-600 dark:text-secundary-500">destaque</span></h2>
                 <p class="text-base lg:text-md text-neutral-g100 dark:text-neutral-g30 max-w-prose mx-auto">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illum quae autem tempora exercitationem
