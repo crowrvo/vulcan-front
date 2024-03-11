@@ -6,7 +6,7 @@ const showMenu = ref(false);
 </script>
 <template>
     <header
-        class="flex items-center justify-between gap-4 fixed top-0 w-full overflow-visible px-6 py-2 lg:px-16 lg:py-4 bg-neutral-g0 dark:bg-neutral-g900 shadow-md dark:shadow-neutral-g0/10 z-[900]">
+        class="flex items-center justify-between gap-4 fixed top-0 w-full overflow-visible px-6 py-2 lg:px-16 lg:py-4 bg-n0 dark:bg-n900 shadow-md dark:shadow-n0/10 z-[900]">
         <div class="flex items-center gap-3 overflow-hidden">
             <button type="button" class="ml-1 p-2 focus:outline focus:outline-secundary-400 rounded">
                 <g-icon class="!text-primary-600 dark:!text-primary-400 text-sm lg:text-lg"
@@ -17,7 +17,7 @@ const showMenu = ref(false);
                     class="mix-blend-difference dark:mix-blend-normal size-logo" />
             </NuxtLink>
             <h1
-                class="sr-only md:not-sr-only text-neutral-g900 dark:text-neutral-g0 text-md lg:text-lg font-bold font-ternary">
+                class="sr-only md:not-sr-only text-n900 dark:text-n0 text-md lg:text-lg font-bold font-ternary">
                 Vulcan Scanlator</h1>
         </div>
 
@@ -38,7 +38,7 @@ const showMenu = ref(false);
         <div class="flex items-center gap-6" @focusout="showMenu = false" @pointerout="showMenu = false">
             <g-color-mode class="!bg-transparent dark:!bg-transparent max-md:hidden" />
             <div v-if="!user" class="flex h-full items-center gap-1 self-stretch">
-                <NuxtLink tabindex="0" class="inline-flex px-4 py-2 rounded-sd bg-transparent text-neutral-g900 dark:text-neutral-g0 focus:outline focus:outline-primary-700 dark:focus:outline-primary-400" to="/login">
+                <NuxtLink tabindex="0" class="inline-flex px-4 py-2 rounded-sd bg-transparent text-n900 dark:text-n0 focus:outline focus:outline-primary-700 dark:focus:outline-primary-400" to="/login">
                     Fazer Login
                 </NuxtLink>
                 <NuxtLink tabindex="0" class="inline-flex px-6 py-2 rounded-sd primary-gradient-x text-white font-semibold focus:outline focus:outline-primary-700 dark:focus:outline-primary-400" to="/register">
