@@ -11,7 +11,7 @@ export const useAuth = () => {
       // Parameters to pass to OAuth 2.0 endpoint.
       var params = {
         client_id: "660010482532-gf5tskd4a762dv8hf44slj5n1rs0m16s.apps.googleusercontent.com",
-        redirect_uri: `http://localhost:3000/${callback}`,
+        redirect_uri: `${process.env.ROOT_URL??"http://localhost:3000"}/${callback}`,
         scope: "openid profile email",
         state: "try_sample_request",
         include_granted_scopes: "true",
