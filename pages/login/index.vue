@@ -14,7 +14,7 @@ const redirectTo = query.redirects ?? "home";
 
 <template>
   <div
-    class="flex basis-1/2 flex-col text-neutral-g900 dark:text-white md:landscape:grid md:landscape:grid-cols-3 gap-4 lg:gap-16 md:landscape:grid-flow-col-dense bg-neutral-white-50 dark:bg-neutral-g900 rounded-sd p-6 lg:max-w-screen-lg overflow-hidden mx-auto">
+    class="flex basis-1/2 flex-col text-n900 dark:text-white md:landscape:grid md:landscape:grid-cols-3 gap-4 lg:gap-16 md:landscape:grid-flow-col-dense bg-neutral-white-50 dark:bg-n900 rounded-sd p-6 lg:max-w-screen-lg overflow-hidden mx-auto">
     <div class="md:landscape:col-span-1 flex md:landscape:flex-col gap-2 items-center">
       <NuxtImg src="/assets/logo.png" alt="Logo da Vulcan"
         class="mix-blend-difference dark:mix-blend-normal min-w-20 size-fit" />
@@ -28,15 +28,14 @@ const redirectTo = query.redirects ?? "home";
           <div class="flex flex-col gap-2">
             <Field @enter="SignIn()" :password-toggle="true" label="Senha" type="password" />
             <div class="flex gap-3 justify-between self-stretch">
-              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="">Não tenho conta</NuxtLink>
+              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="/register">Não tenho conta</NuxtLink>
               <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="">Esqueci minha senha</NuxtLink>
             </div>
           </div>
         </fieldset>
       </div>
       <button type="button" @click.prevent="SignIn()" tabindex="0"
-        class="text-base lg:text-md dark:bg-neutral-g800 flex gap-2 px-3 py-3 lg:py-4 rounded-sd items-center shadow-[0px_0px_4px_rgba(0,0,0,0.1)] transition-colors hover:active:text-white hover:active:bg-primary-400 focus:outline-primary-200 ease-in"
-        to="">
+        class="text-base lg:text-md dark:bg-n800 flex gap-2 px-3 py-3 lg:py-4 rounded-sd items-center shadow-[0px_0px_4px_rgba(0,0,0,0.1)] transition-colors hover:active:text-white hover:active:bg-primary-400 focus:outline-primary-200 ease-in">
         <g-icon class="text-sm lg:text-md" icon="uil:google" />
         Continuar com o Google
       </button>

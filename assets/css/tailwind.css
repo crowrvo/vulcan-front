@@ -30,7 +30,7 @@
     }
 
     body {
-        @apply font-primary overflow-x-hidden text-neutral-dark dark:text-white bg-neutral-white-50 dark:bg-neutral-g900;
+        @apply font-primary overflow-x-hidden text-neutral-dark dark:text-n0 bg-neutral-white-50 dark:bg-n900;
     }
 
     a {
