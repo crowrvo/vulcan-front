@@ -29,6 +29,7 @@ export default defineConfig({
     "i-uil:books",
     "i-uil:fire",
     "i-mdi:logout",
-    "i-uil:bell"
+    "i-uil:bell",
+    "i-mdi:loading"
   ]
 })
