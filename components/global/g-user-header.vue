@@ -6,7 +6,7 @@ const showMenu = ref(false);
 </script>
 <template>
     <header
-        class="flex items-center justify-between gap-4 fixed top-0 w-full overflow-visible px-6 py-2 lg:px-16 lg:py-4 bg-n0 dark:bg-n900 shadow-md dark:shadow-n100/5 z-[900]">
+        class="flex items-center justify-between gap-4 fixed top-0 w-full overflow-visible px-6 py-2 lg:px-16 lg:py-4 bg-n0 dark:bg-n900 shadow-sm dark:shadow-md dark:shadow-n100/5 z-[900]">
         <div class="flex items-center gap-3 overflow-hidden">
             <button type="button" class="ml-1 p-2 focus:outline focus:outline-primary-400 rounded">
                 <g-icon class="!text-primary-600 dark:!text-primary-400 text-sm lg:text-lg"

@@ -32,7 +32,7 @@ const actions = actionsList.filter(act => act.permissions === props.user.permiss
             enter-to-class="opacity-100" leave-active-class="transition-opacity duration-100 ease"
             leave-from-class="opacity-100" leave-to-class="opacity-0">
             <menu v-show="showMenu" @focus="$emit('show-menu', true)"
-                class="flex flex-col p-1 absolute gap-1 top-full w-full origin-top-right bg-n0 dark:bg-n900 border border-n30 dark:border-n700 shadow-md rounded-t-none rounded-b-sd border-t-0 focus:outline-0">
+                class="flex flex-col p-1 absolute gap-1 top-full mt-1 w-full origin-top-right bg-n0 dark:bg-n900 border border-n30 dark:border-n700 shadow-sm rounded-sd border-t-0 focus:outline-0">
                 <nav class="w-full">
                     <ul class="w-full">
                         <li class="w-full" v-for="action in actions" :key="action.to">
@@ -57,7 +57,7 @@ const actions = actionsList.filter(act => act.permissions === props.user.permiss
                     <g-icon class="!text-alert-600 text-xsm lg:text-md" icon="mdi:logout" />
                     Logout
                 </button>
-                <div @focus="$emit('show-menu', true)" class="py-1 self-stretch flex justify-center items-center lg:hidden">
+                <div @focus="$emit('show-menu', true)" class="py-1 md:landscape:hidden self-stretch flex justify-center items-center lg:hidden">
                     <g-color-mode class="!bg-transparent" @show-menu="(value: boolean) => value ? $emit('show-menu', value) : $emit('show-menu')" />
                 </div>
             </menu>
