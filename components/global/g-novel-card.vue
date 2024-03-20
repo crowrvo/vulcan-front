@@ -1,94 +1,48 @@
 <script setup lang="ts">
 import type { novelDetails } from '~/test/mock/novels';
 
-type props = novelDetails & {
-    showAsVariant: "landscape" | "portrait"
+type props = Required<novelDetails> & {
+    showAsVariant: "landscape" | "portrait",
+    showRating: boolean,
+    showDescription: boolean,
+    showCategories: boolean,
+    showChapters: boolean
 }
-withDefaults(defineProps<props>(), { showAsVariant: "landscape" })
+withDefaults(defineProps<props>(), { showAsVariant: "landscape", showDescription: false })
 const addToLibrary = () => { };
 </script>
 <template>
-    <article v-if="showAsVariant === 'portrait'"
-        class="inline-flex flex-col snap-always snap-center min-w-[200px] gap-3 max-w-[200px] justify-between rounded-xl border bg-secundary-50 border-secundary-300 dark:bg-n800 dark:border-n500 overflow-hidden">
-        <NuxtImg class="aspect-portrait size-full object-cover max-h-[250px] lg:max-h-[250px]" :src="image" placeholder />
-        <div class="flex flex-col justify-between gap-3 w-full p-3">
-            <div class="flex self-stretch flex-col gap-3 w-full">
-                <hgroup class="self-stretch">
-                    <h4 class="line-clamp-2 text-md lg:text-lg font-bold capitalize">
-                        <NuxtLink class="focus:outline-0 focus:underline focus:underline-offset-4" :to="novelUrl">
-                            {{ title }}
-                        </NuxtLink>
-                    </h4>
-                    <p
-                        class="line-clamp-3 mt-1 w-full max-w-prose text-sm lg:text-md text-n100 dark:text-n50 leading-relaxed">
-                        {{ description }}</p>
-                </hgroup>
-                <div v-if="!visibleAsTopRating" class="self-stretch relative p-2 pl-9">
-                    <span class="absolute left-0 top-3 text-sm text-n900 dark:text-n0">Cáp.</span>
-                    <div
-                        class="flex gap-2 items-center self-stretch max-w-full overflow-x-scroll overflow-y-hidden scrollable-container overscroll-none">
-                        <NuxtLink v-if="!visibleAsTopRating"
-                            class="block transition-colors duration-300 ease-in px-3 text-md py-1 rounded-sd secundary-gradient text-n0"
-                            v-for="chapter in lastEnumerateChaptersUploaded" :to="chapter.to" :key="chapter.to">
-                            {{ chapter.chapterNumber }}
-                            <span class="sr-only pointer-events-none">Ler ao cápitulo {{ chapter.chapterNumber }} da Novel
-                                {{
-                                    title }}</span>
-                        </NuxtLink>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col self-stretch gap-2">
-                <NuxtLink
-                    class="text-n0 secundary-gradient px-6 py-3 basis-1/2 flex bg-gradient-to-r from-secundary-500 to-secundary-700 text-base lg:text-md items-center justify-center gap-2 text-center rounded-md focus:outline focus:outline-secundary-700 dark:outline-secundary-400"
-                    :to="novelUrl">Mostrar mais</NuxtLink>
-                <button tabindex="0" type="button" @click=""
-                    class="px-6 py-2 basis-1/2 inline-flex items-center text-base lg:text-md gap-2 text-center justify-center text-n0 rounded-md !bg-n600 hover:active:!bg-n800 dark:hover:active:!bg-n500 focus:outline focus:outline-n700 focus:outline-offset-1 dark:outline-n200">
-                    <g-icon class="text-sm lg:text-md !text-n0" icon="uil:books" />
-                    Leitura
-                </button>
+    <article @click="navigateTo(novelUrl)" v-if="showAsVariant === 'portrait'" class="flex flex-col gap-6 rounded-2xl min-w-[150px] max-w-[150px] lg:min-w-[200px] lg:max-w-[200px] overflow-hidden bg-n10 dark:bg-n700 ring-1 ring-n30 dark:ring-n800">
+        <NuxtImg class="max-lg:w-[150px] max-lg:h-[200px] w-[200px] h-[250px]" :src="image" alt="" />
+        <div class="flex flex-col gap-3 px-6 pb-6 self-stretch">
+            <NuxtLink :to="novelUrl" class="text-md lg:text-lg font-semibold line-clamp-2 capitalize focus:outline-none focus:underline focus:decoration-2 focus:decoration-primary-400 underline-offset-4">{{ title }}</NuxtLink>
+            <div v-if="showChapters" class="text-sm font-semibold text-secundary-400 dark:text-secundary-300">
+                <span class="text-md">{{ chaptersCounter }}</span>
+                Capítulos
             </div>
         </div>
     </article>
-
-    <article v-else
-        class="inline-flex snap-always snap-center w-max min-w-[50%] flex-auto gap-3 max-w-[900px] justify-between rounded-xl border bg-secundary-50 border-secundary-300 dark:bg-n800 dark:border-n500 overflow-hidden hover:active:border-secundary-400 dark:hover:active:border-n200 transition-colors duration-200 ease-in">
-        <NuxtImg
-            class="aspect-portrait size-full basis-1/2 object-cover max-h-[200px] lg:max-h-[250px] max-w-1/2 rounded-br-sd"
-            :src="image" placeholder />
-        <div class="flex flex-col justify-between gap-3 w-full p-3 h-max">
-            <div class="flex self-stretch flex-col gap-3">
-                <hgroup class="self-stretch">
-                    <h4 class="line-clamp-2 text-md lg:text-lg font-bold capitalize">
-                        <NuxtLink class="focus:outline-0 focus:underline focus:underline-offset-4" :to="novelUrl">
-                            {{ title }}
-                        </NuxtLink>
-                    </h4>
-                    <p
-                        class="line-clamp-3 mt-1 w-full max-w-prose text-sm lg:text-md text-n100 dark:text-n50 leading-relaxed">
-                        {{ description }}</p>
-                </hgroup>
-                <div v-if="!visibleAsTopRating"
-                    class="flex gap-2 items-center relative max-w-full overflow-x-scroll overflow-y-hidden p-2 pl-9 scrollable-container">
-                    <span class="absolute left-0 top-3 text-sm text-n900 dark:text-n0">Cáp.</span>
-                    <NuxtLink
-                        class="block transition-colors duration-300 ease-in px-3 text-md py-1 rounded-sd bg-secundary-700 hover:active:bg-secundary-400 text-n0"
-                        v-for="chapter in lastEnumerateChaptersUploaded" :to="chapter.to" :key="chapter.to">
-                        {{ chapter.chapterNumber }}
-                        <span class="sr-only pointer-events-none">Ler ao cápitulo {{ chapter.chapterNumber }} da Novel {{
-                            title }}</span>
+    <article @click="navigateTo(novelUrl)" v-else class="flex gap-3 rounded-2xl min-w-[450px] max-w-[450px] bg-n10 dark:bg-n800 ring-1 ring-n30 dark:ring-n700 overflow-x-hidden">
+        <NuxtImg class="w-[180px] h-[250px]" :src="image" alt="" />
+        <div class="flex flex-col gap-6 p-3 pb-6 w-full">
+            <div class="flex flex-col gap-2 w-full">
+                <NuxtLink :to="novelUrl" class="text-lg font-semibold line-clamp-2 capitalize focus:outline-none focus:underline focus:decoration-2 focus:decoration-primary-400 underline-offset-4">{{ title }}</NuxtLink>
+                <div v-if="showRating" class="flex gap-1">
+                    <g-icon v-for="star in rating" :key="star" class="text-base text-secundary-300 dark:text-secundary-300"
+                        icon="mdi:star" />
+                    <g-icon v-for="star in 5 - rating" :key="star" v-if="rating"
+                        class="text-base text-secundary-300 dark:text-secundary-300" icon="mdi:star-outline" />
+                </div>
+                <p class="text-base first-letter:capitalize text-n900 dark:text-n50 line-clamp-4">{{ description }}</p>
+                <div v-if="showCategories" class="flex items-center gap-2">
+                    <NuxtLink v-for="category in categories.slice(0,2)" :key="category.to" :to="category.to" class="block px-3 py-1 rounded-sd bg-n20 dark:bg-n700 ring-1 ring-n30 dark:ring-0 text-base dark:hover:active:bg-n600 transition-[background, outline] duration-150 ease-in hover:active:outline outline-primary-400 focus:outline-primary-400 focus:outline-offset-1">
+                        {{ category.name }}
                     </NuxtLink>
                 </div>
             </div>
-            <div class="flex flex-wrap md:landscape:flex-nowrap w-full gap-2">
-                <NuxtLink
-                    class="text-n0 px-6 py-2 basis-1/2 flex-auto inline-flex justify-center text-base lg:text-md items-center gap-2 text-center rounded-md secundary-gradient focus:outline focus:outline-secundary-700 dark:outline-secundary-400"
-                    :to="novelUrl">Mostrar mais</NuxtLink>
-                <button tabindex="0" type="button" @click=""
-                    class="px-6 py-2 basis-1/2 flex-auto inline-flex items-center justify-center text-base lg:text-md gap-2 text-center text-n0 rounded-md !bg-n600 hover:active:!bg-n800 dark:hover:active:!bg-n500 focus:outline focus:outline-n700 focus:outline-offset-1 dark:outline-n200">
-                    <g-icon class="text-sm !text-n0" icon="uil:books" />
-                    Leitura
-                </button>
+            <div v-if="showChapters" class="text-base font-semibold w-full">
+                <span class="text-md">{{ chaptersCounter }}</span>
+                Capítulos
             </div>
         </div>
     </article>
