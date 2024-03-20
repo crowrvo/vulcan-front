@@ -16,8 +16,11 @@ const redirectTo = query.redirects ?? "home";
   <div
     class="flex basis-1/2 flex-col text-n900 dark:text-white md:landscape:grid md:landscape:grid-cols-3 gap-4 lg:gap-16 md:landscape:grid-flow-col-dense bg-neutral-white-50 dark:bg-n900 rounded-sd p-6 lg:max-w-screen-lg overflow-hidden mx-auto">
     <div class="md:landscape:col-span-1 flex md:landscape:flex-col gap-2 items-center">
-      <NuxtImg src="/assets/logo.png" alt="Logo da Vulcan"
-        class="mix-blend-difference dark:mix-blend-normal min-w-20 size-fit" />
+      <NuxtLink to="/">
+        <NuxtImg src="/assets/logo.png" alt="Logo da Vulcan"
+          class="mix-blend-difference dark:mix-blend-normal min-w-20 size-fit" />
+          <span class="sr-only">Ir para a tela inicial</span>
+      </NuxtLink>
       <h1 class="text-current font-ternary text-2xl capitalize font-bold">Vulcan Scanlator</h1>
     </div>
     <form action="" class="md:landscape:col-start-2 md:landscape:col-span-2 flex flex-col gap-6 self-stretch px-6">
@@ -28,8 +31,10 @@ const redirectTo = query.redirects ?? "home";
           <div class="flex flex-col gap-2">
             <Field @enter="SignIn()" :password-toggle="true" label="Senha" type="password" />
             <div class="flex gap-3 justify-between self-stretch">
-              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="/register">Não possuo conta</NuxtLink>
-              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="">Esqueci minha senha</NuxtLink>
+              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="/register">Não possuo
+                conta</NuxtLink>
+              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="">Esqueci minha senha
+              </NuxtLink>
             </div>
           </div>
         </fieldset>
