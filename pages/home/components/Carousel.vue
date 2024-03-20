@@ -13,7 +13,7 @@ import { carousel } from '~/test/mock/carousel';
                 <div class="flex flex-col gap-3 relative max-w-[70%]">
                     <ul v-for="tag in slide.tags" class="flex items-center gap-2">
                         <li
-                            class="px-3 py-1 text-n0 bg-secundary-950 text-center capitalize border border-secundary-500 text-sm lg:text-md rounded">
+                            class="px-3 py-1 text-n0 bg-secundary-900 text-center capitalize border border-secundary-500 text-sm lg:text-md rounded">
                             {{ tag }}
                         </li>
                         <li class="flex gap-2 items-center text-n0">
@@ -27,16 +27,11 @@ import { carousel } from '~/test/mock/carousel';
                         {{ slide.title }}
                     </h3>
                     <NuxtLink tabindex="0" :to="slide.url"
-                        class="flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 transition-colors duration-300 ease-in hover:active:from-primary-500 hover:active:to-primary-600 text-n0 w-max px-6 py-1 rounded">
+                        class="flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 transition-colors duration-300 ease-in hover:active:from-primary-400 hover:active:to-primary-500 text-n0 w-max px-6 py-1 rounded">
                         Visitar a página da Novel
                     </NuxtLink>
                 </div>
             </div>
-        </div>
-        <div
-            class="absolute bottom-0 right-0 flex gap-3 bg-n10 dark:bg-n900 p-3 rounded-tl-sd min-w-[30%]">
-            <span tabindex="0" v-for="slide in carousel"
-                class="size-6 rounded-full bg-secundary-600 dark:bg-secundary-200 border-none focus:outline-secundary-800 shadow-current-filter shadow-secundary-800 dark:shadow-secundary-400"></span>
         </div>
     </div>
 </template>

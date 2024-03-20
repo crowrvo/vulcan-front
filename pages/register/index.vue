@@ -53,25 +53,29 @@ const validateCode = async () => {
     <div
         class="lg:max-w-screen-md overflow-hidden lg:rounded-xl mx-auto lg:basis-1/2 max-lg:md:landscape:min-h-screen lg:grid-flow-col-dense min-h-[60vh]">
         <div
-            class="relative p-6 md:landscape:px-8 md:landscape:py-16 self-stretch bg-secundary-600 flex flex-col items-center justify-between gap-8 max-lg:md:landscape:fixed max-lg:md:landscape:inset-y-0 max-lg:md:landscape:h-dvh max-lg:md:landscape:w-[30vw] z-50 isolate">
-            <NuxtImg class="object-scale-down size-20 lg:size-28" src="/assets/logo.png" alt="" />
+            class="relative p-6 md:landscape:px-8 md:landscape:py-16 self-stretch bg-secundary-400 flex flex-col items-center justify-between gap-8 max-lg:md:landscape:fixed max-lg:md:landscape:inset-y-0 max-lg:md:landscape:h-dvh max-lg:md:landscape:w-[30vw] z-50 isolate">
+            <NuxtLink class="block" to="/">
+                <NuxtImg class="object-scale-down size-20 lg:size-28" src="/assets/logo.png" alt="" />
+                <span class="sr-only">Ir para a página inicial</span>
+            </NuxtLink>
             <div
                 class="w-full relative flex gap-8 md:landscape:flex-col max-md:items-center justify-between overflow-hidden">
-                <div class="flex max-md:items-center gap-3 text-n0 max-md:bg-secundary-600 max-md:-mr-4">
+                <button @click="!isCurrent('registration')?goToPrevious():null" class="flex max-md:items-center gap-3 text-n0 max-md:bg-secundary-600 max-md:-mr-4">
                     <span class="size-4 bg-n0 rounded-full max-md:order-last transition-colors duration-500 ease"
                         :class="{ 'bg-secundary-900': isCurrent('registration') }"></span>
                     Registrar
-                </div>
-                <div
+                </button>
+                <button
+                @click="isCurrent('registration') && toValue(current.isValid())? goToNext() : !isCurrent('registration')??null"
                     class="flex max-md:items-center items-end gap-3 text-n0 max-md:bg-secundary-600 max-md:-ml-4 break-all">
                     <span class="size-4 bg-n0 rounded-full transition-colors duration-500 ease"
                         :class="{ 'bg-secundary-900': isCurrent('confirm-email') }">
                     </span>
                     Verificação
                     <div
-                        class="absolute inset-x-0 inset-y-1/2 max-md:h-[3px] md:landscape:inset-y-0 -z-10 max-md:w-full w-[3px] bg-secundary-100 translate-x-[6px]">
+                        class="absolute inset-x-0 inset-y-1/2 max-md:h-[3px] md:landscape:inset-y-0 -z-10 max-md:w-full w-[3px] bg-secundary-200 translate-x-[6px]">
                     </div>
-                </div>
+                </button>
             </div>
             <g-color-mode
                 class="hidden max-lg:md:landscape:inline-flex max-lg:md:landscape:absolute max-lg:md:landscape:top-3 max-lg:md:landscape:right-3 max-lg:md:scale-75 !bg-transparent dark:!bg-transparent *:!text-n0" />
