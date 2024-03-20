@@ -28,7 +28,7 @@ const redirectTo = query.redirects ?? "home";
           <div class="flex flex-col gap-2">
             <Field @enter="SignIn()" :password-toggle="true" label="Senha" type="password" />
             <div class="flex gap-3 justify-between self-stretch">
-              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="/register">Não tenho conta</NuxtLink>
+              <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="/register">Não possuo conta</NuxtLink>
               <NuxtLink tabindex="0" class="capitalize text-primary-600 dark:text-primary-400" to="">Esqueci minha senha</NuxtLink>
             </div>
           </div>

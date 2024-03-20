@@ -1,7 +1,7 @@
 <template>
   <div class="background flex flex-col justify-evenly items-center gap-6 lg:gap-16 px-6 py-16">
     <slot />
-    <g-color-mode />
+    <g-color-mode class="!bg-n0 dark:!bg-n900" />
   </div>
 </template>
 
