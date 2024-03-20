@@ -30,6 +30,8 @@ export default defineConfig({
     "i-uil:fire",
     "i-mdi:logout",
     "i-uil:bell",
-    "i-mdi:loading"
+    "i-mdi:loading",
+    "i-mdi:star-outline",
+    "i-mdi:star"
   ]
 })
