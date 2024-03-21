@@ -18,9 +18,7 @@ const { current, goToNext, goToPrevious, isCurrent } = useStepper({
     'registration': {
         title: "Registrar",
         isValid: (): boolean => {
-            return filledAllFields && emailValidator &&
-                userInformations.password.length >= 8 &&
-                passValidator.value;
+            return registerValid.value
         },
     },
     'confirm-email': {
@@ -29,6 +27,13 @@ const { current, goToNext, goToPrevious, isCurrent } = useStepper({
     }
 });
 
+const registerValid = ref(false);
+
+watchPostEffect(() => {
+    registerValid.value = filledAllFields && emailValidator &&
+        userInformations.password.length >= 8 &&
+        passValidator.value;
+})
 const filledAllFields = computed(() => {
     return userInformations.nick !== '' &&
         userInformations.email !== '' &&
@@ -60,14 +65,15 @@ const validateCode = async () => {
             </NuxtLink>
             <div
                 class="w-full relative flex gap-8 md:landscape:flex-col max-md:items-center justify-between overflow-hidden">
-                <button @click="!isCurrent('registration')?goToPrevious():null" class="flex max-md:items-center gap-3 text-n0 max-md:bg-secundary-600 max-md:-mr-4">
+                <button @click="!isCurrent('registration') ? goToPrevious() : null"
+                    class="flex max-md:items-center gap-3 text-n0 max-md:bg-secundary-400 max-md:-mr-4">
                     <span class="size-4 bg-n0 rounded-full max-md:order-last transition-colors duration-500 ease"
                         :class="{ 'bg-secundary-900': isCurrent('registration') }"></span>
                     Registrar
                 </button>
                 <button
-                @click="isCurrent('registration') && toValue(current.isValid())? goToNext() : !isCurrent('registration')??null"
-                    class="flex max-md:items-center items-end gap-3 text-n0 max-md:bg-secundary-600 max-md:-ml-4 break-all">
+                    @click="isCurrent('registration') && toValue(current.isValid()) ? goToNext() : !isCurrent('registration') ?? null"
+                    class="flex max-md:items-center items-end gap-3 text-n0 max-md:bg-secundary-400 max-md:-ml-4 break-all">
                     <span class="size-4 bg-n0 rounded-full transition-colors duration-500 ease"
                         :class="{ 'bg-secundary-900': isCurrent('confirm-email') }">
                     </span>
@@ -80,7 +86,7 @@ const validateCode = async () => {
             <g-color-mode
                 class="hidden max-lg:md:landscape:inline-flex max-lg:md:landscape:absolute max-lg:md:landscape:top-3 max-lg:md:landscape:right-3 max-lg:md:scale-75 !bg-transparent dark:!bg-transparent *:!text-n0" />
             <NuxtLink
-                class="flex max-md:absolute max-md:top-3 p-2 max-md:right-3 items-center gap-2 text-n0 transition-colors duration-200 ease-in ring-1 ring-secundary-800 hover:active:bg-secundary-800 md:landscape:px-3 md:landscape:py-2 rounded-sd"
+                class="flex max-md:absolute max-md:top-3 p-2 max-md:right-3 items-center gap-2 text-n0 transition-colors duration-200 ease-in ring-1 ring-secundary-600 hover:active:bg-secundary-800 md:landscape:px-3 md:landscape:py-2 rounded-sd"
                 to="/">
                 <g-icon class="text-base lg:text-lg" icon="mdi:home" />
                 <span class="max-md:hidden">Ir a página inicial</span>
@@ -104,7 +110,8 @@ const validateCode = async () => {
                             label-bellow="mínimo de 8 caractéres alfanuméricos." />
                         <Field input-name="confirm-password" @input="(v: string) => confirmPass = v"
                             @enter="current.isValid() ? goToNext() : null" type="password" label="Confirmar a senha" />
-                            <NuxtLink class="capitalize text-primary-600 dark:text-primary-400 w-max" to="/login">Já tenho conta</NuxtLink>
+                        <NuxtLink class="capitalize text-primary-600 dark:text-primary-400 w-max" to="/login">Já tenho conta
+                        </NuxtLink>
                         <Transition enter-active-class="transition-opacity duration-300 ease-in"
                             enter-from-class="opacity-0" enter-to-class="opacity-100"
                             leave-active-class="transition-opacity duration-300 ease-in" leave-from-class="opacity-100"
@@ -163,7 +170,7 @@ const validateCode = async () => {
                         </div>
                     </div>
                 </KeepAlive>
-                <g-color-mode class="md:hidden" />
+                <g-color-mode class="md:hidden !bg-transparent" />
             </div>
         </form>
     </div>
