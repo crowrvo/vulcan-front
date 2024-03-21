@@ -34,7 +34,7 @@ import { novels } from '~/test/mock/novels';
                             v-for="category in novels[0].categories.slice(0, 1)" :to="category.to">{{ category.name }}
                         </NuxtLink>
                     </div>
-                    <p class="text-n50 text-base lg:text-md line-clamp-4 px-6 max-w-prose">
+                    <p class="text-n100 dark:text-n50 text-base lg:text-md line-clamp-4 px-6 max-w-prose leading-snug">
                         {{ novels[0].description }}
                     </p>
                 </div>
@@ -52,7 +52,7 @@ import { novels } from '~/test/mock/novels';
                     v-for="novel in novels.slice(1, 11)" :title="novel.title" :image="novel.image"
                     :novel-url="novel.novelUrl" :visible-as-top-rating="true" :description="novel.description"
                     :rating="novel.rating" :show-chapters="true" :chapters-counter="novel.chaptersCounter"
-                    :show-rating="false" :show-categories="true" :categories="novel.categories" />
+                    :show-rating="false" :categories="novel.categories" />
             </div>
         </div>
     </section>
