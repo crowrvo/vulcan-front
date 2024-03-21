@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { carousel } from '~/test/mock/carousel';
+import Autoplay from "embla-carousel-autoplay";
+
+const plugin = Autoplay({
+    delay: 5000,
+    stopOnMouseEnter: true,
+    stopOnInteraction: false,
+})
 </script>
 <template>
-    <div class="relative grid grid-cols-1 w-full min-h-[320px] max-h-[80svh] overflow-hidden">
-        <!-- container swap -->
-        <div
-            class="flex w-max max-w-screen h-full snap-x snap-mandatory overflow-x-scroll before:bg-neutral-dark/30 before:absolute before:inset-0">
-            <!-- slide -->
-            <div role="region" v-for="slide in carousel"
-                class="flex flex-col justify-center w-screen h-full snap-center snap-always px-6 md:landscape:px-16"
+    <CnCarousel class="w-full" :opts="{ align: 'center', loop: true }" :plugins="[plugin]" @mouseenter="plugin.stop"
+        @mouseleave="[plugin.reset(), plugin.play()]">
+        <CnCarouselContent>
+            <CnCarouselItem v-for="slide in carousel" :key="slide.url"
+                class=" size-full basis-full relative before:bg-neutral-dark/30 before:absolute before:inset-0"
                 :style="{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }">
-                <div class="flex flex-col gap-3 relative max-w-[70%]">
+                <div
+                    class="w-full flex justify-center flex-col gap-3 isolate max-w-[70%] min-h-[350px] px-6 md:landscape:px-16 ">
                     <ul v-for="tag in slide.tags" class="flex items-center gap-2">
                         <li
                             class="px-3 py-1 text-n0 bg-secundary-900 text-center capitalize border border-secundary-500 text-sm lg:text-md rounded">
@@ -31,7 +37,7 @@ import { carousel } from '~/test/mock/carousel';
                         Visitar a página da Novel
                     </NuxtLink>
                 </div>
-            </div>
-        </div>
-    </div>
+            </CnCarouselItem>
+        </CnCarouselContent>
+    </CnCarousel>
 </template>
