@@ -53,8 +53,8 @@ const actions = actionsList.filter(act => act.permissions === props.user.permiss
                     <span class="absolute top-2 left-3 size-3 rounded-full bg-alert-600 text-n0"></span>
                 </button>
                 <button tabindex="0" type="button" @click="" @focus="$emit('show-menu', true)"
-                    class="capitalize text-sm lg:text-md inline-flex items-center text-alert-600 gap-2 p-3 focus:bg-alert-50 hover:active:bg-n20 dark:hover:active:bg-n700 dark:focus:!bg-n700 focus:outline focus:outline-alert-100 dark:focus:outline-alert-900 active:outline-0 rounded">
-                    <g-icon class="!text-alert-600 text-xsm lg:text-md" icon="mdi:logout" />
+                    class="capitalize text-sm lg:text-md inline-flex items-center text-alert-700 dark:text-alert-600 gap-2 p-3 focus:bg-alert-100 dark:focus:!bg-n700 hover:active:bg-n20 dark:hover:active:bg-n700 focus:outline focus:outline-alert-600 dark:focus:outline-alert-900 active:outline-0 rounded">
+                    <g-icon class="!text-alert-700 dark:!text-alert-600 text-xsm lg:text-md" icon="mdi:logout" />
                     Logout
                 </button>
                 <div @focus="$emit('show-menu', true)" class="py-1 md:landscape:hidden self-stretch flex justify-center items-center lg:hidden">
