@@ -23,19 +23,15 @@ const row2 = ref<HTMLDivElement>();
                 class="flex min-w-full w-max max-w-full overflow-x-scroll snap-x snap-mandatory scrollable-container p-3 gap-8">
                 <g-novel-card class="max-md:!scale-90" show-as-variant="landscape" v-for="novel in topNovels"
                     :key="novel.novelUrl" :title="novel.title" :image="novel.image" :novel-url="novel.novelUrl"
-                    :visible-as-top-rating="true" :description="novel.description" :rating="novel.rating"
-                    :show-chapters="false" :publisher="novel.publisher" :categories="novel.categories"
-                    :show-categories="true" :chapters-counter="novel.chaptersCounter" :show-rating="false"
-                    :banner-url="novel.bannerUrl ?? ''" />
+                    :description="novel.description" :rating="novel.rating" :show-chapters="false"
+                    :categories="novel.categories" :show-categories="true" :chapters-counter="novel.chaptersCounter" />
             </div>
             <div ref="row2"
                 class="flex min-w-full w-max max-w-full overflow-x-scroll snap-x snap-mandatory scrollable-container p-3 gap-8">
                 <g-novel-card class="max-md:!scale-90" show-as-variant="landscape" v-for="novel in topNovels"
                     :key="novel.novelUrl" :title="novel.title" :image="novel.image" :novel-url="novel.novelUrl"
-                    :visible-as-top-rating="true" :description="novel.description" :rating="novel.rating"
-                    :show-chapters="false" :publisher="novel.publisher" :chapters-counter="novel.chaptersCounter"
-                    :show-categories="true" :show-rating="false" :categories="novel.categories"
-                    :banner-url="novel.bannerUrl ?? ''" />
+                    :description="novel.description" :rating="novel.rating" :show-chapters="false"
+                    :categories="novel.categories" :show-categories="true" :chapters-counter="novel.chaptersCounter" />
             </div>
         </div>
     </section>
