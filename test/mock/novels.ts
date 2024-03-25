@@ -22,11 +22,12 @@ export type novelDetails = {
     rating: 0 | 1 | 2 | 3 | 4 | 5;
     categories: Array<URL>,
     bannerUrl?: string,
+    views: number,
     publisher: URL,
-    nationality?: 'national'|'foreign'
+    nationality?: 'national' | 'foreign'
 }
 
-export const sponsorsBannerMock:Array<sponsorsBanner> = [{
+export const sponsorsBannerMock: Array<sponsorsBanner> = [{
     name: "Eu sou o único necromancete",
     image: "/assets/images/background/capa-vulcan-eu-sou-o-unico-necromante-2.png",
     to: "/",
@@ -51,7 +52,8 @@ export const novels: Array<novelDetails> = [{
     categories: [{ name: "Ação", to: "/categories/action" }, { name: "Necromância", to: "/categories/necromance" }],
     bannerUrl: "",
     publisher: { name: "Sxka", to: "" },
-    nationality: 'national'
+    nationality: 'national',
+    views: 128281
 }, {
     title: "The Great Gatsby",
     image: "/assets/images/background/capa-vulcan-eu-sou-o-unico-necromante-2.png",
@@ -62,7 +64,8 @@ export const novels: Array<novelDetails> = [{
     rating: 3,
     categories: [{ name: "Ação", to: "/categories/action" }, { name: "Comedia", to: "/categories/comedy" }],
     publisher: { name: "One", to: "" },
-    nationality: 'foreign'
+    nationality: 'foreign',
+    views: 1737828
 }, {
     title: "Eu sou o único necromante",
     image: "/assets/images/background/capa-vulcan-eu-sou-o-unico-necromante-2.png",
@@ -73,7 +76,8 @@ export const novels: Array<novelDetails> = [{
     rating: 4,
     categories: [{ name: "Musical", to: "/categories/musical" }],
     publisher: { name: "Ssaa", to: "" },
-    nationality: 'national'
+    nationality: 'national',
+    views: 72729
 }, {
     title: "The Great Gatsby",
     image: "/assets/images/background/capa-vulcan-eu-sou-o-unico-necromante-2.png",
@@ -84,7 +88,20 @@ export const novels: Array<novelDetails> = [{
     chaptersCounter: 32,
     rating: 3,
     categories: [{ name: "Ação", to: "/categories/action" }, { name: "Necromância", to: "/categories/necromance" }],
-    publisher: { name: "Szi", to: "" }
+    publisher: { name: "Szi", to: "" },
+    views: 727392
+}, {
+    title: "Zhe Good Gatsby",
+    image: "/assets/images/background/capa-vulcan-eu-sou-o-unico-necromante-2.png",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    visibleAsTopRating: true,
+    novelUrl: "/",
+    chaptersCounter: 122,
+    rating: 4,
+    categories: [{ name: "Ação", to: "/categories/action" }, { name: "Comedia", to: "/categories/comedy" }],
+    publisher: { name: "One", to: "" },
+    nationality: 'foreign',
+    views: 288292
 }];
 
 export const topNovels: Array<novelDetails> = novels.filter(novel => novel.visibleAsTopRating);

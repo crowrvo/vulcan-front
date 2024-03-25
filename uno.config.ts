@@ -32,6 +32,13 @@ export default defineConfig({
     "i-uil:bell",
     "i-mdi:loading",
     "i-mdi:star-outline",
-    "i-mdi:star"
+    "i-mdi:star",
+    "i-uil:search",
+    "i-heroicons-solid:adjustments",
+    "i-ri:sort-alphabet-asc",
+    "i-ri:sort-alphabet-desc",
+    "i-bx:sort",
+    "i-mdi:grid",
+    "i-mdi:table-column",
   ]
 })
