@@ -40,5 +40,7 @@ export default defineConfig({
     "i-bx:sort",
     "i-mdi:grid",
     "i-mdi:table-column",
+    "i-uil:angle-double-right",
+    "i-uil:angle-double-left"
   ]
 })
