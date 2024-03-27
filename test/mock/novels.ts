@@ -44,7 +44,7 @@ export const sponsorsBannerMock: Array<sponsorsBanner> = [{
 export const novels: Array<novelDetails> = [{
     title: "Eu sou o único necromante",
     image: "/assets/images/background/capa-vulcan-eu-sou-o-unico-necromante-2.png",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua.",
     visibleAsTopRating: true,
     novelUrl: "/",
     chaptersCounter: 21,
@@ -104,4 +104,10 @@ export const novels: Array<novelDetails> = [{
     views: 288292
 }];
 
+export type NovelCollection = Pick<novelDetails, "title" | "publisher" | "novelUrl" | "categories" | "image">;
+
+export const mockAuthors: Array<string> = ['One', 'Murata', 'Genso', 'Yusuke', 'John Carter', 'Hanabi'];
+export const mockScanlators: Array<string> = ['Master', 'Next', 'CoffeSx', 'Otom'];
+export const mockCategories: Array<string> = ['ação', 'aventura', 'necromância', 'corrida'];
+export const mockPublishers: Array<string> = ['Master', 'Gibblin'];
 export const topNovels: Array<novelDetails> = novels.filter(novel => novel.visibleAsTopRating);
