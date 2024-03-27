@@ -93,6 +93,7 @@ const addToLibrary = () => { };
             <NuxtLink :to="novelUrl"
                 class="text-base inline-flex w-min font-medium px-3 py-2 rounded-sd text-n0 bg-secundary-400 hover:active:bg-secundary-500 transition-colors duration-100 ease-in">
                 Conferir
+                <span class="sr-only">novel {{ title }}</span>
             </NuxtLink>
         </div>
     </article>
