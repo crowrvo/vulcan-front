@@ -21,6 +21,7 @@
     "embla-carousel": "^8.0.0",
     "embla-carousel-autoplay": "^8.0.0",
     "embla-carousel-vue": "^8.0.0",
+    "fuse.js": "^7.0.0",
     "lucide-vue-next": "^0.359.0",
     "nuxt": "^3.10.2",
     "radix-vue": "^1.5.3",
