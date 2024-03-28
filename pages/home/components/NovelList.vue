@@ -11,13 +11,12 @@ const filteredNovels = mockNovel.filter(novel => novel.nationality === props.fil
 <template>
     <section class="w-full">
         <h3 class="text-2xl lg:text-3xl uppercase font-secundary">{{ title }}</h3>
-        <CnCarousel class="w-full min-h-[200px]" :opts="{ align: 'center', loop: true }">
+        <CnCarousel class="w-full max-w-full min-h-[200px]" :opts="{ align: 'center'}">
             <CnCarouselContent class="-pl-6 py-6">
                 <CnCarouselItem v-if="filteredNovels.length > 0" v-for="novel in filteredNovels" :key="novel.novelUrl"
-                    class="basis-1/3 flex-initial pl-6">
+                    class="!basis-auto pl-6">
                     <g-novel-card show-as-variant="portrait" :title="novel.title" :image="novel.image"
-                        :novel-url="novel.novelUrl" :description="novel.description" :rating="novel.rating"
-                        :publisher="novel.publisher" :show-categories="true" :categories="novel.categories" />
+                        :novel-url="novel.novelUrl" :show-categories="true" :categories="novel.categories" />
                 </CnCarouselItem>
                 <CnCarouselItem v-else class="basis-full flex flex-col justify-center items-center">
                     <p class="text-center text-base text-n900 dark:text-n0">Sem novels para exibir dessa categoria até então
